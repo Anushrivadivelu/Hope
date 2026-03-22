@@ -1,0 +1,4 @@
+QUES2 : PURPOSE OF COMMA IN PRINT STATEMENT
+SOLUTION: 
+The purpose of comma in java printf statement is The comma (,) in Java’s printf is used as a format flag to display numbers with 
+grouping separators (thousands separators), making the output more readable.
