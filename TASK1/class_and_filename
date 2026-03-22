@@ -1,0 +1,4 @@
+QUES 3 : WHY CLASS NAME AND FILE NAME SHOULD BE SAME ?
+SOLUTION:
+The class name and file name should be same because this rule helps the java compiler and JVM easily locate or identify 
+and compile the class correctly. if they are different , the program produces compliation error.
