@@ -1,3 +1,4 @@
+// 1672. Richest Customer Wealth
 class Solution {
     public int maximumWealth(int[][] accounts) {
         int max = Integer.MIN_VALUE;
