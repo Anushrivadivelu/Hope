@@ -18,14 +18,14 @@ public class stringbuilderandbuffer {
     // STRING BUFFER
     StringBuffer s = new StringBuffer("Good Morning");
     s.append("@");
-    System.out.println(sb);
+    System.out.println(s);
     s.insert(5,"Night");
-    System.out.println(sb);
+    System.out.println(s);
     s.replace(0,4," Great");
-    System.out.println(sb);
+    System.out.println(s);
     s.delete(0,4);
-    System.out.println(sb);
+    System.out.println(s);
     s.reverse();
-    System.out.println(sb);
+    System.out.println(s);
   }
 }
