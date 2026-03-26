@@ -25,9 +25,9 @@ class Library {
     }
 
     void display() {
-        System.out.println("Book: " + bName);
-        System.out.println("ID: " + bId);
-        System.out.println("Issued: " + (isIssued ? "Yes" : "No"));
+        System.out.println( bName);
+        System.out.println(bId);
+        System.out.println((isIssued ? "Yes" : "No"));
         System.out.println();
     }
 
