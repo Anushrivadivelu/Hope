@@ -1,0 +1,27 @@
+3. it is accomplished or not accomplished exception with reason
+
+try {
+  int a = 10/0;
+} catch (Exception e) {
+  System.out.println("Can't divide by zero " + e);
+} catch (ArithmeticException ex) {
+  System.out.println("Can't divide by zero " + ex);
+}
+
+The code will not compile so the task is not accomplished.
+from the code:
+catch (Exception e) { ... }      // general
+catch (ArithmeticException ex) { ... }  // specific
+
+the ArithmeticException is subclass of Exception. so the catch (Exception e) statement
+will catch all the exception, including ArithmeticException. Therefore, the second catch becomes unreachable.
+which causes Compile-time Error - "Exception ArithmeticException has already been caught".
+
+So, the corrected code is, 
+try {
+    int a = 10 / 0;
+} catch (ArithmeticException ex) {
+    System.out.println("Can't divide by zero " + ex);
+} catch (Exception e) {
+    System.out.println("Some exception occurred " + e);
+}
