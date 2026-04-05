@@ -24,7 +24,7 @@ public class PayrollService {
     }
 
     for (Employee e : payroll.getEmployees()) {
-        e.displayDetails();  // polymorphism
+        e.displayDetails();
         double salary = e.calculateSalary();
         System.out.println("Calculated Salary: " + salary);
     }
