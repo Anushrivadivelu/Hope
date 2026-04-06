@@ -9,14 +9,6 @@ public class PayrollService {
   public PayrollService(Payroll payroll){
     this.payroll = payroll;
   }
-
-  public double calculateTotalSalary(){
-    double totalSalary=0;
-    for(Employee e : payroll.getEmployees()){
-      totalSalary += e.calculateSalary();
-    }return totalSalary;
-  }
-
   public void processPayroll() {
     if (payroll.getEmployees().isEmpty()) {
         System.out.println("No employees in payroll.");
@@ -28,7 +20,6 @@ public class PayrollService {
         double salary = e.calculateSalary();
         System.out.println("Calculated Salary: " + salary);
     }
-     System.out.println("Total Payroll Salary: " + calculateTotalSalary());
   }
 
   public void generatePayslip(Employee e) {
