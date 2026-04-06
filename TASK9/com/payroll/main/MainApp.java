@@ -12,8 +12,6 @@ public class MainApp{
     pr.addEmployee(e1);
     pr.addEmployee(e2);
     ps.processPayroll();
-    double total = ps.calculateTotalSalary();
-    System.out.println("Total Salary: " + total);
     ps.generateAllPayslips();
   }
 }
