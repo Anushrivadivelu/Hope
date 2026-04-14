@@ -1,28 +1,24 @@
 package task11;
 public class Main {
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws Exception {
     Logger logger = new Logger();
-    Worker worker = new Worker(logger);
-    worker.start();
-    for (int i = 0; i < 3; i++) {
-      int threadNum = i;
+    new Worker(logger).start();
+    for (int i = 0; i < 2; i++) {
+      int t = i;
       new Thread(() -> {
-        for (int j = 0; j < 5; j++) {
-          String level = (j % 2 == 0) ? "INFO" : "ERROR";
-          logger.log("Thread " + threadNum + " -> Msg " + j, level);
+        for (int j = 0; j < 3; j++) {
+          logger.log("Thread " + t + " Msg " + j);
         }
       }).start();
     }
     Thread.sleep(2000);
     System.out.println("\nAll Logs:");
-    logger.printAllLogs();
-    System.out.println("\nSorted by Level:");
-    for (LogMessage log : logger.getLogsSortedByLevel()) {
-      System.out.println(log.format());
-    }
+    logger.printLogs();
+    System.out.println("\nSorted by Message:");
+    logger.sortByMessage();
+    logger.printLogs();
     System.out.println("\nSorted by Time:");
-    for (LogMessage log : logger.getLogsSortedByTime()) {
-      System.out.println(log.format());
-    }
+    logger.sortByTime();
+    logger.printLogs();
   }
 }
