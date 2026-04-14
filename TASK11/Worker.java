@@ -1,7 +1,7 @@
 package task11;
 
 public class Worker extends Thread {
-  private Logger logger;
+  Logger logger;
   public Worker(Logger logger) {
     this.logger = logger;
   }
@@ -9,10 +9,10 @@ public class Worker extends Thread {
     while (true) {
       try {
         LogMessage log = logger.getLog();
-        System.out.println(log.format());
-      } catch (InterruptedException e) {
+        System.out.println(log);
+      } catch (Exception e) {
         e.printStackTrace();
       }
     }
-  }
+  } 
 }
