@@ -1,12 +1,11 @@
 package task11;
 
 import java.util.*;
-
 public class Logger {
-  private List<LogMessage> logs = new ArrayList<>();
-  public void log(String message, String level) {
+  List<LogMessage> logs = new ArrayList<>();
+  public void log(String msg) {
     synchronized (logs) {
-      logs.add(new LogMessage(message, level));
+      logs.add(new LogMessage(msg));
       logs.notify();
     }
   }
@@ -18,22 +17,16 @@ public class Logger {
       return logs.remove(0);
     }
   }
-  public void printAllLogs() {
-    synchronized (logs) {
-      Iterator<LogMessage> it = logs.iterator();
-      while (it.hasNext()) {
-        System.out.println(it.next().format());
-      }
+  public void printLogs() {
+    Iterator<LogMessage> it = logs.iterator();
+    while (it.hasNext()) {
+      System.out.println(it.next());
     }
   }
-  public List<LogMessage> getLogsSortedByLevel() {
-    List<LogMessage> copy = new ArrayList<>(logs);
-    copy.sort((a, b) -> a.getLevel().compareTo(b.getLevel()));
-      return copy;
-    }
-  public List<LogMessage> getLogsSortedByTime() {
-    List<LogMessage> copy = new ArrayList<>(logs);
-    Collections.sort(copy);
-    return copy;
+  public void sortByMessage() {
+    Collections.sort(logs, (a, b) -> a.message.compareTo(b.message));
+  }
+  public void sortByTime() {
+    Collections.sort(logs);
   }
 }
