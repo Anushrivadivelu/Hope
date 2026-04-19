@@ -7,9 +7,9 @@ interface Add{
 }
 public class InterfaceImplementation {
     public static void main(String[] args) {
-        Test t = () -> System.out.println("Hello, this is a lambda expression implementing the show method.");
+        Test t = () -> System.out.println("lambda expression ");
         t.show();
-        Add t1 = (a,b) -> System.out.println("Hello Lambda interface add: " + (a+b));
+        Add t1 = (a,b) -> System.out.println("Lambda interface" + (a+b));
         t1.show(5, 10);
     }
 }
