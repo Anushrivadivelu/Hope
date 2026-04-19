@@ -8,9 +8,9 @@ class bank {
         System.out.println(Thread.currentThread().getName()+" "+ "is withdrawing...");
         if(balance >= amount){
             balance -= amount;
-            System.out.println("Withdrawal successful. Remaining balance: " + balance);
+            System.out.println("balance: " + balance);
         } else {
-            System.out.println("Insufficient funds. Current balance: " + balance);
+            System.out.println("Current balance: " + balance);
         }
     }
 }
